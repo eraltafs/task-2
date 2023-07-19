@@ -39,4 +39,4 @@ async function fetchLatestVideos() {
   }
 }
 
-module.exports = fetchLatestVideos;
+module.exports = {fetchLatestVideos};

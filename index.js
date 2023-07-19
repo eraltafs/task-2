@@ -11,16 +11,16 @@ app.use(express.json())
 const Port = process.env.port
 
 
-const videoRouter = require('./routes/videoRouter');
-const searchRouter = require('./routes/searchRouter');
-const fetchLatestVideos = require('./routes/fetchVideo');
+const {videoRouter} = require('./routes/video.Routes');
+const {searchRouter} = require('./routes/search.Routes');
+const {fetchLatestVideos} = require('./routes/fetchVideo.Routes');
 
 const {connection} = require("./config/db")
 
 app.use('/videos', videoRouter);
 app.use('/search', searchRouter);
 
-setInterval(fetchLatestVideos, 10000); // Fetch every 10 seconds
+// setInterval(fetchLatestVideos, 10000); // Fetch every 10 seconds
 
 app.listen(Port,async ()=>{
     try {

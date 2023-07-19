@@ -2,7 +2,7 @@ const express = require('express');
 const searchRouter = express.Router();
 const { VideoModel } = require('../model/video');
 
-searchRouter.get('/search', async (req, res) => {
+searchRouter.get('/', async (req, res) => {
   try {
     const query = req.query.q;
 
@@ -20,4 +20,4 @@ searchRouter.get('/search', async (req, res) => {
   }
 });
 
-module.exports = searchRouter;
+module.exports = {searchRouter};

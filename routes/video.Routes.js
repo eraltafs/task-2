@@ -2,7 +2,7 @@ const express = require('express');
 const videoRouter = express.Router();
 const { VideoModel } = require('../model/video');
 
-videoRouter.get('/videos', async (req, res) => {
+videoRouter.get('/', async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
@@ -26,4 +26,4 @@ videoRouter.get('/videos', async (req, res) => {
   }
 });
 
-module.exports = videoRouter;
+module.exports = {videoRouter};
