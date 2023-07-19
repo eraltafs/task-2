@@ -17,6 +17,10 @@ const {fetchLatestVideos} = require('./routes/fetchVideo.Routes');
 
 const {connection} = require("./config/db")
 
+app.get("/",(req,res)=>{
+    res.send("Base API")
+})
+
 app.use('/videos', videoRouter);
 app.use('/search', searchRouter);
 
